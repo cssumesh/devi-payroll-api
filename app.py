@@ -1,3 +1,5 @@
+# SmartPay PostgreSQL backend active
+from flask import Flask, request, jsonify, redirect, url_for, session, render_template_string
 from flask import Flask, request, jsonify, redirect, url_for, session, render_template_string
 import os
 import datetime
