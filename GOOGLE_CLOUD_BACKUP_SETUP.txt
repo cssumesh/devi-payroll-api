@@ -1,0 +1,19 @@
+SmartPay India Render Backend - Google Cloud Backup Setup
+
+Required Render Environment Variables:
+DATABASE_URL = Render PostgreSQL internal URL
+GCS_BUCKET_NAME = smartpay-backup-service
+GOOGLE_APPLICATION_CREDENTIALS = /etc/secrets/google-service-account.json
+BACKUP_ENCRYPTION_KEY = your private long key
+
+Required Render Secret File:
+Filename: google-service-account.json
+Contents: paste Google service account JSON key
+
+Backend endpoints added:
+POST /api/backup/upload
+POST /api/backup/latest
+POST /api/backup/download
+
+Do not upload Google JSON key to GitHub.
+Do not change BACKUP_ENCRYPTION_KEY after backups are created, otherwise old backups may not restore.
